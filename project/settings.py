@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['approperty.herokuapp.com', 'localhost', 'approperty-af6afce65c8a.herokuapp.com']
+ALLOWED_HOSTS = ['8000-rhogand-property-ruo8zi77on5.ws-eu102.gitpod.io', 'approperty-af6afce65c8a.herokuapp.com']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'cloudinary_storage',
     'django.contrib.staticfiles',
+    'django_summernote',
     'cloudinary',
     'app',
 ]
