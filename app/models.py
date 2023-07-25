@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 import cloudinary
 from cloudinary.models import CloudinaryField
 
-# Create your models here.
+
 property_type = (
   ('S', "Sale"),
   ('R', "Rent"),
@@ -12,6 +12,7 @@ property_type = (
 class Property(models.Model):
     name = models.CharField(max_length=50)
     location = models.CharField(max_length=50)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE)
     direction = models.CharField(max_length=50)
     description = models.TextField(max_length=2000)
     property_type = models.CharField(choices=property_type, max_length=10)
@@ -34,3 +35,18 @@ class Property(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = 'Property'
+        verbose_name_plural = 'Properties'
+
+
+class Category(models.Model):
+    category_name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return  self.category_name
+
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
