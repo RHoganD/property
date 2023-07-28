@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import  generic, View
-from .models import Property,  Category
+from .models import Property , Category
+from .forms import ViewingForm
 
 
 
@@ -20,8 +21,20 @@ def property_list(request):
 def property_detail(request, id):
     property_detail = Property.objects.get(id=id)
     template = 'app/property_detail.html'
+
+
+    if request.method == 'Post':
+        viewing_form = ViewingForm(request.POST)
+        if viewing_form.is_valid():
+            viewing_form.save()
+            return redirect('property_list')
+    
+    else:
+        viewing_form = ViewingForm()
+
     context = {
-        'property_detail' : property_detail
+        'property_detail' : property_detail,
+        'viewing_form' : viewing_form
     }
 
     return render(request, template, context)
@@ -33,5 +46,31 @@ def home(generic):
     template = 'app/index.html' 
     context = {
         'index.html' : home
+    }
+    return render(generic, template, context)
+
+def agents(generic):
+    agents =  Property.objects.all()
+    template = 'app/agents.html' 
+    context = {
+        'agents.html' : agents
+    }
+    return render(generic, template, context)
+
+
+def about(generic):
+    about =  Property.objects.all()
+    template = 'app/about.html' 
+    context = {
+        'about.html' : about
+    }
+    return render(generic, template, context)
+
+
+def contact(generic):
+    contact =  Property.objects.all()
+    template = 'app/contact.html' 
+    context = {
+        'contact.html' : contact
     }
     return render(generic, template, context)

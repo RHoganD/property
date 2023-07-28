@@ -28,7 +28,7 @@
   </section>
   <!-- END: slider  -->
 
-  <section class="probootstrap-section">
+  <section class="section">
     <div class="container">
       <div class="row heading">
         <div class="col-md-12"><h2 class="mt0 mb50 text-center">{{property_detail.direction}}</h2>
@@ -69,5 +69,22 @@
     </div>
   </section>
 
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h4>Interested | Arrange a Viewing </h4>
+          <form method="POST">
+            {% csrf_token %}
+
+            {{viewing_form}}
+            {{form.errors}}
+            <button type="submit" class="btn btn-primary">Arrange a Viewing</button>
+          </form>       
+        </div>
+       </div>
+       </div>
+  </section>
+
   
-{%endblock%}
+{% endblock %}

@@ -1,8 +1,8 @@
 from django import forms
-from . models import Viewing
+from .models import Viewing , Property
 
 
-class ViewingForm(form.ModelForm):
+class ViewingForm(forms.ModelForm):
     class Meta :
-        models = Viewing
+        model = Viewing
         fields = '__all__'

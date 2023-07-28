@@ -20,23 +20,23 @@
 
   <header role="banner" class="header">
     <div class="container">
-        <a href="index.html" class="logo">Haus Agency<span>.</span></a>
+        <a href="{% url 'index' %}" class="logo">Haus Agency<span>.</span></a>
         
         <a href="#" class="burger-menu visible-xs" ><i></i></a>
         <div class="mobile-menu-overlay"></div>
 
         <nav role="navigation" class="nav hidden-xs">
           <ul class="main-nav">
-            <li><a href="index.html">Home</a></li>
-            <li class="active"><a href="properties.html">Properties</a></li>
-            <li><a href="agents.html">Agents</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li class="active"><a href="{% url 'property_list' %}">Properties</a></li>
+            <li><a href="{% url 'agents' %}">Agents</a></li>
+            <li><a href="{% url 'aboutus' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
           </ul>
           <div class="extra-text visible-xs"> 
             <a href="#" class="burger-menu"><i></i></a>
             <h5>Address</h5>
-            <p>198 West 21th Street, Suite 721 New York NY 10016</p>
+            <p>200 Bogmore Road, Suite 721 Glasgow G52 2SN</p>
             <h5>Connect</h5>
             <ul class="social-buttons">
               <li><a href="#"><i class="icon-twitter"></i></a></li>

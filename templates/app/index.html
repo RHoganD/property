@@ -1,1 +1,46 @@
-<h1>index</h1>
+{% extends 'base.html' %}
+ 
+{% block content %}
+ 
+  <section class="slider flexslider">
+    <div class="wrap-banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+
+            <div class="home-search animate">
+              <form action="" method="post">
+                <h2 class="heading">Search your next dream home here</h2>
+                <div class="field-group">
+                  <div class="fields">
+                    
+                    <div class="search-field">
+                      <i class="icon-location2"></i>
+                      <input type="text" class="form-control" placeholder="Enter address, ZIP code, Neighborhoods">
+                    </div>
+                    <div class="search-category">
+                      <i class="icon-chevron-down"></i>
+                      <select name="#" id="" class="form-control">
+                        <option value="">For Rent</option>
+                        <option value="">For Sale</option>
+                      </select>
+                    </div>
+                  </div>
+                  <button class="btn btn-success" type="submit"><i class="icon-magnifying-glass t2"></i> Start Search</button>
+                </div>
+              </form>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="slides">
+      <li style="background-image: url(img/slider_1.jpg);" class="overlay"></li>
+      <li style="background-image: url(img/slider_4.jpg);" class="overlay"></li>
+      <li style="background-image: url(img/slider_2.jpg);" class="overlay"></li>
+    </ul>
+  </section>
+  <!-- END: slider  -->
+
+{% endblock %}
