@@ -45,9 +45,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_summernote',
     'cloudinary',
-    'app',
     'agents',
+    'app',
 ]
+
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

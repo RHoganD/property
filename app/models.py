@@ -67,4 +67,4 @@ class Viewing(models.Model):
     message = models.TextField(max_length=100)
 
     def __str__(self):
-        return self.name
+        return self.customer_name

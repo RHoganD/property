@@ -6,7 +6,7 @@ from cloudinary.models import CloudinaryField
 class Agent(models.Model):
     name = models.CharField(max_length=30)
     title = models.CharField(max_length=30)
-    image = CloudinaryField('agents/', default='placeholder')
+    image = CloudinaryField('image', default='placeholder')
  
 
     def __str__(self):
