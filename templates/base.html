@@ -1,0 +1,132 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Haus Agency </title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" type="text/css">
+   </head>
+  <body>
+
+  <!-- START: header -->
+  
+  <div class="loader"></div>
+
+  <header role="banner" class="header">
+    <div class="container">
+        <a href="index.html" class="logo">Haus Agency<span>.</span></a>
+        
+        <a href="#" class="burger-menu visible-xs" ><i></i></a>
+        <div class="mobile-menu-overlay"></div>
+
+        <nav role="navigation" class="nav hidden-xs">
+          <ul class="main-nav">
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="properties.html">Properties</a></li>
+            <li><a href="agents.html">Agents</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="extra-text visible-xs"> 
+            <a href="#" class="burger-menu"><i></i></a>
+            <h5>Address</h5>
+            <p>198 West 21th Street, Suite 721 New York NY 10016</p>
+            <h5>Connect</h5>
+            <ul class="social-buttons">
+              <li><a href="#"><i class="icon-twitter"></i></a></li>
+              <li><a href="#"><i class="icon-facebook2"></i></a></li>
+              <li><a href="#"><i class="icon-instagram2"></i></a></li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+  </header>
+  <!-- END: header -->
+
+  <section class="slider flexslider2 page-inner">
+    <div class="overlay"></div>
+    <div class="wrap-banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <ul class="slides">
+      <li style="background-image: url(img/slider_1.jpg);"></li>
+      <li style="background-image: url(img/slider_4.jpg);"></li>
+      <li style="background-image: url(img/slider_2.jpg);"></li>
+    </ul> -->
+  </section>
+  <!-- END: slider  -->
+
+  {% block content %}
+  <!-- Content Goes here -->
+  {% endblock content %}
+  
+
+
+<!-- footer section  -->
+  <footer class="footer bg" style="background-image: url(img/slider_3.jpg)">
+    <div class="container">
+      <div class="row mb60">
+        <div class="col-md-3">
+          <div class="footer-widget">
+            <h4 class="heading">About Haus.</h4>
+            <p> example tex area. </p>
+            <p><a href="#">Read more...</a></p>
+          </div> 
+        </div>
+        <div class="col-md-3">
+          <div class="footer-widget link-wrap">
+            <h4 class="heading">Quick Links</h4>
+            <ul class="stack-link">
+              <li><a href="#">Property Listing</a></li>
+              <li><a href="#">Rent Properties</a></li>
+              <li><a href="#">Sell Properties</a></li>
+              <li><a href="#">Agents</a></li>
+              <li><a href="#">Testimonial</a></li>
+            </ul>
+          </div>
+        </div>
+
+           
+
+      </div>
+      <div class="row copyright">
+        <div class="col-md-6">
+          <div class="footer-widget">
+            
+          </div>
+        </div>
+        <!-- <div class="col-md-6">
+          <div class="footer-widget right">
+            <ul class="footer-social">
+              <li><a href="#"><i class="icon-twitter"></i></a></li>
+              <li><a href="#"><i class="icon-facebook"></i></a></li>
+              <li><a href="#"><i class="icon-instagram2"></i></a></li>
+            </ul>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </footer>
+
+  <div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-chevron-thin-up"></i></a>
+  </div>
+  
+  
+  <script src="https://kit.fontawesome.com/fc632b9fc3.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
+  
+  </body>
+ 
+</html>

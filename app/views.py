@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.views import  View
+from django.views import  generic, View
 from .models import Property,  Category
 
 
@@ -7,7 +7,7 @@ from .models import Property,  Category
 # Create your views here.
 def property_list(request):
     property_list = Property.objects.all()
-    template = 'agency/property_list.html'
+    template = 'app/property_list.html'
     context = {
 
          'property_list' : property_list
@@ -19,18 +19,19 @@ def property_list(request):
 
 def property_detail(request, id):
     property_detail = Property.objects.get(id=id)
-    template = 'agency/property_detail.html'
+    template = 'app/property_detail.html'
     context = {
         'property_detail' : property_detail
     }
 
-    return render(request, template, context) 
+    return render(request, template, context)
 
 
-def home(request):
+
+def home(generic):
     home =  Property.objects.all()
-    template = 'agency/index.html' 
+    template = 'app/index.html' 
     context = {
         'index.html' : home
     }
-    return render(request, template, context)
+    return render(generic, template, context)

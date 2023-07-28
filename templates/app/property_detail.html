@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <!-- END: header -->
+  <section class="slider flexslider2 page-inner">
+    <div class="overlay"></div>
+    <div class="wrap-banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+
+            <div class="page-title animate">
+              <div class="breadcrumbs">
+                <a href="{% url 'index' %}"> Home</a>  <span><a href="{% url 'property_list' %}">Property</a> </span><strong>{{property_detail}}</strong>
+              </div>
+              
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <ul class="slides">
+      <li style="background-image: url(img/slider_1.jpg);"></li>
+      <li style="background-image: url(img/slider_4.jpg);"></li>
+      <li style="background-image: url(img/slider_2.jpg);"></li>
+    </ul> -->
+  </section>
+  <!-- END: slider  -->
+
+  <section class="probootstrap-section">
+    <div class="container">
+      <div class="row heading">
+        <div class="col-md-12"><h2 class="mt0 mb50 text-center">{{property_detail.direction}}</h2>
+       
+       </div>
+      <div class="row">
+        <div class="col-md-12 mt0 mb50 text-center">
+          <p><img src="{{property_detail.featured_image.url}}" class="img-responsive" alt="Free Bootstrap Template by uicookies.com"></p>
+        </div>
+      </div>
+      <!-- what this property offer -->
+
+      <div class="row">
+        <div class="col-md-12">
+          <h4>Details</h4>
+          <p>Property for {{property_detail.property_type}}</p>
+          <i class="fa-thin fa-money-bill-wave"></i>
+          <p> Price £ {{property_detail.price}} per month </p>
+          <i class="fa-thin fa-bed"></i>
+          <p>Beds {{property_detail.bedrooms_num}}</p>
+          <i class="fa-thin fa-bath"></i>
+          <p>Baths {{property_detail.bathroom_num}}</p>
+          <i class="fa-light fa-car-side"></i>
+          <p>Parking {{property_detail.parking}}</p>
+          <!-- <p>{{property_detail.furniture}}</p> -->
+        </div>
+       </div>
+
+
+      <!-- description start -->
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Property Description</h3>
+          <p>{{property_detail.description}}</p>
+        </div>
+      
+      </div>
+    </div>
+  </section>
+
+  
+{%endblock%}
