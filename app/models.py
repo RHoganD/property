@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 import cloudinary
 from cloudinary.models import CloudinaryField
-from phone_field import PhoneField
+
 
 
 property_type = (
@@ -63,7 +63,7 @@ class Category(models.Model):
 class Viewing(models.Model):
     customer_name = models.CharField(max_length=30)
     email = models.EmailField()
-    phone = models.IntegerField(null=True)
+    phone = models.IntegerField()
     message = models.TextField(max_length=100)
 
     def __str__(self):

@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.views import  generic, View
 from .models import Property , Category
@@ -49,28 +50,11 @@ def home(generic):
     }
     return render(generic, template, context)
 
-def agents(generic):
-    agents =  Property.objects.all()
-    template = 'app/agents.html' 
-    context = {
-        'agents.html' : agents
-    }
-    return render(generic, template, context)
-
 
 def about(generic):
     about =  Property.objects.all()
     template = 'app/about.html' 
     context = {
         'about.html' : about
-    }
-    return render(generic, template, context)
-
-
-def contact(generic):
-    contact =  Property.objects.all()
-    template = 'app/contact.html' 
-    context = {
-        'contact.html' : contact
     }
     return render(generic, template, context)
