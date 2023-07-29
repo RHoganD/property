@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'django_summernote',
     'cloudinary',
     'agents',
+    'contact',
+    'home',
     'app',
 ]
 
@@ -142,7 +144,19 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
+# provisional to be replace with real information
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'test@gmail.com'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSOWRD = ''
+EMAIL_USE_TLS = False
+EMAIL_PORT = 1025
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+

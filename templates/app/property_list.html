@@ -8,7 +8,7 @@
 
         <div class="page-title animate">
           <div class="breadcrumbs">
-            <a href="{% url 'home' %}"> Home</a>  <span><a href="{% url 'property_list' %}">Property</a>
+            <a href="{% url 'home:home' %}"> Home</a>  <span><a href="{% url 'app:property_list' %}">Property</a>
           </div>
           <h1>Properties</h1>
         </div>
@@ -22,16 +22,16 @@
               <img class="card-img-top"
         
               src="{{property.featured_image.url}}" class="img-responsive" alt="">
-              <!-- <a href="#" class="probootstrap-love"><i class="icon-heart"></i></a> -->
+              <!-- <a href="#" class="love"><i class="icon-heart"></i></a> -->
              
             </div>
           
             <div class="card-text">
-              <h2 class="card-heading"><a href="{% url 'property_detail' property.id %}">{{property}}</a></h2>
+              <h2 class="card-heading"><a href="{% url 'app:property_detail' property.id %}">{{property}}</a></h2>
               <div class="listing-location">
                 <i class="icon-location2"></i> <span>{{property.direction}}</span>
               </div>
-              <div class="listing-category for-sale"><span>for sale</span></div>
+              <div class="listing-category for-sale"><span>for {{property.property_type}}</span></div>
               <div class="listing-price"><strong>£{{property.price}}</strong> / month</div>
             </div>
             <div class="card-extra">
@@ -50,11 +50,7 @@
                 </li>
               </ul>
             </div>
-          </div>
-
-          
-
-
+            </div>       
         </div>
 
         {% endfor %}

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Property, Category, Viewing
+from .models import Property, Category, Viewing, About
 from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
@@ -19,3 +19,4 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ('category_name',)
 
 admin.site.register(Viewing)
+admin.site.register(About)

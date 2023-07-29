@@ -1,14 +1,26 @@
 from django.shortcuts import render
-from django.views import  generic, View
-from .models import Property , Category
+from django.http import HttpResponseRedirect
+from django.views import View
+from .models import Property, Category, About
 from .forms import ViewingForm
+from django.db.models import Q
 
 
 
-# Create your views here.
 def property_list(request):
     property_list = Property.objects.all()
     template = 'app/property_list.html'
+
+    address_query = request.GET.get('q')
+    property_type = request.GET.getlist('property_type', None)
+    if address_query and property_type :
+        property_list = property_list.filter(
+            Q(name__icontains = address_query) &
+            Q(property_type__icontains=property_type[0])
+        ).distinct()
+
+        print(property_list)   
+
     context = {
 
          'property_list' : property_list
@@ -27,7 +39,8 @@ def property_detail(request, id):
         viewing_form = ViewingForm(request.POST)
         if viewing_form.is_valid():
             viewing_form.save()
-            return redirect('property_list')
+            return HttpResponseRedirect(reverse('property_list'))
+           
     
     else:
         viewing_form = ViewingForm()
@@ -41,19 +54,11 @@ def property_detail(request, id):
 
 
 
-def home(generic):
-    home =  Property.objects.all()
-    template = 'app/index.html' 
+def about(request):
+    about = About.objects.all()
+    template = 'app/about.html'
     context = {
-        'index.html' : home
+        'about.html' : about 
     }
-    return render(generic, template, context)
 
-
-def about(generic):
-    about =  Property.objects.all()
-    template = 'app/about.html' 
-    context = {
-        'about.html' : about
-    }
-    return render(generic, template, context)
+    return render(request, template, context)

@@ -51,6 +51,7 @@ class Property(models.Model):
 
 class Category(models.Model):
     category_name = models.CharField(max_length=30)
+    featured_img = CloudinaryField('images', default='placeholder')
 
     def __str__(self):
         return  self.category_name
@@ -65,6 +66,16 @@ class Viewing(models.Model):
     email = models.EmailField()
     phone = models.IntegerField()
     message = models.TextField(max_length=100)
+ 
 
     def __str__(self):
         return self.customer_name
+
+
+class About(models.Model):
+    vision = models.TextField(max_length=5000)
+    mission = models.TextField(max_length=5000)
+    image_feature = CloudinaryField('image', default='placeholder')
+
+    def __str__(self):
+        return str(self.id)

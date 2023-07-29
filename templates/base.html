@@ -22,27 +22,27 @@
     <div class="container">
         <a href="#" class="logo">Hausting Agency<span>.</span></a>
         
-        <a href="#" class="burger-menu visible-xs" ><i></i></a>
+        <a href="#" class="burger-menu visible-xs" ></a>
         <div class="mobile-menu-overlay"></div>
 
         <nav role="navigation" class="nav hidden-xs">
           <ul class="main-nav">
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li class="active"><a href="{% url 'property_list' %}">Properties</a></li>
-            <li><a href="{% url 'agents' %}">Agents</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <a href="{% url 'home:home' %}"> Home</a>
+            <a href="{% url 'app:property_list' %}"> Properties</a>
+            <a href="{% url 'agents:agent' %}"> Agents</a>
+            <a href="{% url 'app:about' %}"> About us</a>
+            <a href="{% url 'contact:send_email'%}"> Contact</a>
           </ul>
           <div class="extra-text visible-xs"> 
             <a href="#" class="burger-menu"><i></i></a>
-            <h5>Address</h5>
-            <p>200 Bogmore Road, Suite 721 Glasgow G52 2SN</p>
-            <h5>Connect</h5>
+            <!-- <h5>Address</h5>
+            <p>200 Bogmore Road, Suite 721 Glasgow G52 2SN</p> -->
+            <!-- <h5>Connect</h5>
             <ul class="social-buttons">
               <li><a href="#"><i class="icon-twitter"></i></a></li>
               <li><a href="#"><i class="icon-facebook2"></i></a></li>
               <li><a href="#"><i class="icon-instagram2"></i></a></li>
-            </ul>
+            </ul> -->
           </div>
         </nav>
     </div>
@@ -79,7 +79,7 @@
       <div class="row mb60">
         <div class="col-md-3">
           <div class="footer-widget">
-            <h4 class="heading">About Haus.</h4>
+            <h4 class="heading">About Hausting Agency.</h4>
             <p> example tex area. </p>
             <p><a href="#">Read more...</a></p>
           </div> 
@@ -95,10 +95,7 @@
               <li><a href="#">Testimonial</a></li>
             </ul>
           </div>
-        </div>
-
-           
-
+        </div>        
       </div>
       <div class="row copyright">
         <div class="col-md-6">

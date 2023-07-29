@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+ 
+<section class="slider flexslider">
+  <div class="wrap-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+          <div class="home-search animate">
+            <form action="{% url 'app:property_list' %}" method="get">
+              <h2 class="heading">Search your next dream home here</h2>
+              <div class="field-group">
+                <div class="fields">
+                  
+                  <div class="search-field">
+                    <i class="icon-location2"></i>
+                    <input type="text" name='q' class="form-control" placeholder="Enter address , location">
+                  </div>
+                  <div class="search-category">
+                    <i class="icon-chevron-down"></i>
+                    <select name="property_type" id="" class="form-control">
+                      <option value="rent">For Rent</option>
+                      <option value="sale">For Sale</option>
+                    </select>
+                  </div>
+                </div>
+                <button class="btn btn-success" type="submit"><i class="icon-magnifying-glass t2"></i> Start Search</button>
+              </div>
+            </form>
+            
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <ul class="slides">
+    <li style="background-image: url(img/slider_1.jpg);" class="overlay"></li>
+    <li style="background-image: url(img/slider_4.jpg);" class="overlay"></li>
+    <li style="background-image: url(img/slider_2.jpg);" class="overlay"></li>
+  </ul> -->
+</section>
+<!-- END: slider  -->
+
+<section class="section section-lighter">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card text-center animate">
+          <div class="card-media svg-sm colored">
+            <img src="img/flaticon/svg/001-prize.svg" class="svg" alt="">
+          </div>
+          <div class="card-text">
+            <h2 class="card-heading">Award Winning Brooker</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <p><a href="#">Find out more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="probootstrap-card text-center probootstrap-animate">
+          <div class="probootstrap-card-media svg-sm colored">
+            <img src="img/flaticon/svg/005-new.svg" class="svg" alt="">
+          </div>
+          <div class="probootstrap-card-text">
+            <h2 class="probootstrap-card-heading">New Houses</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <p><a href="#">Find out more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="probootstrap-card text-center  probootstrap-animate">
+          <div class="probootstrap-card-media svg-sm colored">
+            <img src="img/flaticon/svg/006-coin.svg" class="svg" alt="">
+          </div>
+          <div class="probootstrap-card-text">
+            <h2 class="probootstrap-card-heading">Affordable Houses</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <p><a href="#">Find out more</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: section -->
+
+<section class="section">
+  <div class="container">
+    <div class="row heading">
+      <h2 class="mt0 mb50 text-center">Explore Our Neighborhoods</h2>
+    </div>
+    <div class="row gutter10">
+
+      {% for category in category_list_home %}
+
+      <div class="col-md-6 col-sm-6">
+        <a href="#" class="hover-overlay">
+          <img src="{{category.featured_img.url}}" alt="" class="img-responsive">
+          <div class="text-overlay">
+            <h3>{{category}}</h3>
+            <p>430 Properties</p>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+<section class="section bg" style="background-image: url(img/slider_2.jpg);">
+  <div class="container text-center animate" data-animate-effect="fadeIn">
+    <h2 class="heading">Best Home &amp; Properties</h2>
+    <p class="sub-heading">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+    <p><a href="#" class="btn btn-primary mb10">Find out more</a></p>
+  </div>
+</section>
+<!-- END: section -->
+
+<section class="section section-lighter">
+  <div class="container">
+    <div class="row heading">
+      <h2 class="mt0 mb50 text-center">Featured Listing</h2>
+    </div>
+    <div class="row">
+
+      {% if property_list %}
+
+      {% for property in property_list_home %}
+
+      <div class="col-md-4 col-sm-6">
+        <div class="card listing">
+          <div class="card-media">
+            <img src="{{property.featured_image.url}}" class="img-responsive" alt="">
+           </div>
+          <div class="card-text">
+            <h2 class="card-heading"><a href="{% url 'app:property_detail' property.id %}">{{property}}</a></h2>
+            <div class="listing-location">
+              <i class="icon-location2"></i> <span>{{property.direction}}</span>
+            </div>
+            <div class="listing-category for-sale"><span>for {{property.property_type}}</span></div>
+            <div class="listing-price"><strong>£{{property.price}}</strong> / month</div>
+          </div>
+          <div class="card-extra">
+            <ul>
+              <li>
+                Beds
+                <span>{{property.bedrooms_num}}</span>
+              </li>
+              <li>
+                Baths
+                <span>{{property.bathroom_num}}</span>
+              </li>
+              <li>
+                Parking
+                <span>{{property.parking}}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- END listing -->
+      </div>
+      {% endfor %} 
+      {% else %}
+
+    <div class="col-md-10 col-sm-10"> 
+      <h4>No Properties that match your search criteria</h4>
+    </div>
+
+    {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-lighter">
+  <div class="container">
+    <div class="row heading">
+      <h2 class="mt0 mb50 text-center">Our Agents</h2>
+    </div>
+    <div class="row">
+      
+      {% for agent in agent_list_home %}
+                
+      <div class="col-md-3">
+        <div class="card person text-left">
+          <div class="card-media">
+            <img src="{{agent.image.url}}" class="img-responsive" alt="">
+          </div>
+          <div class="card-text">
+            <h2 class="card-heading mb0">{{agent}}</h2>
+            <p><small>{{agent.name}}</small></p>
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+{% endblock %}
