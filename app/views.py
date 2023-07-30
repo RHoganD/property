@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
 from django.views import View
 from .models import Property, Category, About
@@ -61,3 +61,6 @@ def about(request):
     }
 
     return render(request, template, context)
+
+
+  
