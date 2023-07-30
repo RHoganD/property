@@ -18,7 +18,7 @@
   <!-- START: header -->
   <header role="banner" class="header">
     <div class="container">
-        <a href="#" class="logo">Hausting Agency<span>.</span></a>
+        <a href="{% url 'home:home' %}" class="logo">Hausting Agency</a>
         
         <a href="#" class="burger-menu visible-xs" ></a>
         <div class="mobile-menu-overlay"></div>
@@ -30,25 +30,28 @@
             <i><a href="{% url 'agents:agent' %}"> Agents</a></i>
             <i><a href="{% url 'app:about' %}"> About us</a></i>
             <i><a href="{% url 'contact:send_email'%}"> Contact</a></i>
+
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+            </li>
+            {% endif %}
+
           </ul>
-          <!-- <div class="extra-text visible-xs"> 
-            <a href="#" class="burger-menu"><i></a>
-            <h5>Address</h5>
-            <p>200 Bogmore Road, Suite 721 Glasgow G52 2SN</p>
-            <h5>Connect</h5>
-            <ul class="social-buttons">
-              <li><a href="#"><i class="icon-twitter"></i></a></li>
-              <li><a href="#"><i class="icon-facebook2"></i></a></li>
-              <li><a href="#"><i class="icon-instagram2"></i></a></li>
-            </ul> 
-          </div> -->
         </nav>
     </div>
   </header>
   <!-- END: header -->
 
-  <section class="slider flexslider2 page-inner">
-    <!-- <div class="overlay"></div> -->
+  <!-- <section class="slider flexslider2 page-inner">
+    <div class="overlay"></div>
     <div class="wrap-banner">
       <div class="container">
         <div class="row">
@@ -57,13 +60,8 @@
         </div>
       </div>
     </div>
-    <!-- <ul class="slides">
-      <li style="background-image: url(img/slider_1.jpg);"></li>
-      <li style="background-image: url(img/slider_4.jpg);"></li>
-      <li style="background-image: url(img/slider_2.jpg);"></li>
-    </ul> -->
-  </section>
-  <!-- END: slider  -->
+   </section> -->
+
 
   {% block content %}
   <!-- Content Goes here -->

@@ -25,8 +25,7 @@ def property_list(request):
 
          'property_list' : property_list
     }
-    paginate_by = 6
-    
+        
     return render(request, template, context)
     
 

@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'django_summernote',
     'crispy_forms',
     'bootstrap4',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'cloudinary',
     'agents',
     'contact',
@@ -55,6 +58,10 @@ INSTALLED_APPS = [
 
 
 SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -148,6 +155,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
+
 # provisional to be replace with real information
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'admin@gmail.com'
@@ -161,6 +169,8 @@ EMAIL_PORT = 1025
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
 
 
 
