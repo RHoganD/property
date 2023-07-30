@@ -1,22 +1,23 @@
 {% extends 'base.html' %}
- 
+
 {% block content %}
  
 <section class="slider flexslider">
+
   <div class="wrap-banner">
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-          <div class="home-search animate">
+          <div class="home-search">
             <form action="{% url 'app:property_list' %}" method="get">
-              <h2 class="heading">Search your next dream home here</h2>
+              <h4 class="heading">Search your next dream home here</h4>
               <div class="field-group">
                 <div class="fields">
                   
                   <div class="search-field">
-                    <i class="icon-location2"></i>
-                    <input type="text" name='q' class="form-control" placeholder="Enter address , location">
+                    <i class="fa-thin fa-location-dot"></i>
+                    <input type="text" name='q' class="form-control" placeholder="Enter address">
                   </div>
                   <div class="search-category">
                     <i class="icon-chevron-down"></i>
@@ -36,50 +37,41 @@
       </div>
     </div>
   </div>
-  <!-- <ul class="slides">
-    <li style="background-image: url(img/slider_1.jpg);" class="overlay"></li>
-    <li style="background-image: url(img/slider_4.jpg);" class="overlay"></li>
-    <li style="background-image: url(img/slider_2.jpg);" class="overlay"></li>
-  </ul> -->
-</section>
-<!-- END: slider  -->
+  </section>
 
-<section class="section section-lighter">
+  <section class="section section-lighter">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <div class="card text-center animate">
+        <div class="card text-center ">
+          <div class="card-text">
+            <i class="fa-thin fa-award"><h2 class="card-heading">Award Winning Brooker</h2></i>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <!-- <p><a href="#">Find out more</a></p> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center">
           <div class="card-media svg-sm colored">
-            <img src="img/flaticon/svg/001-prize.svg" class="svg" alt="">
+            <img src="#" class="svg" alt="">
           </div>
           <div class="card-text">
-            <h2 class="card-heading">Award Winning Brooker</h2>
+            <h2 class="card-heading">New Houses</h2>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            <p><a href="#">Find out more</a></p>
+            <!-- <p><a href="#">Find out more</a></p> -->
           </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="probootstrap-card text-center probootstrap-animate">
-          <div class="probootstrap-card-media svg-sm colored">
-            <img src="img/flaticon/svg/005-new.svg" class="svg" alt="">
+        <div class="card text-center">
+          <div class="card-media svg-sm colored">
+            <img src="#" class="svg" alt="">
           </div>
-          <div class="probootstrap-card-text">
-            <h2 class="probootstrap-card-heading">New Houses</h2>
+          <div class="card-text">
+            <h2 class="card-heading">Affordable Houses</h2>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            <p><a href="#">Find out more</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="probootstrap-card text-center  probootstrap-animate">
-          <div class="probootstrap-card-media svg-sm colored">
-            <img src="img/flaticon/svg/006-coin.svg" class="svg" alt="">
-          </div>
-          <div class="probootstrap-card-text">
-            <h2 class="probootstrap-card-heading">Affordable Houses</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            <p><a href="#">Find out more</a></p>
+            <!-- <p><a href="#">Find out more</a></p> -->
           </div>
         </div>
       </div>
@@ -95,31 +87,25 @@
     </div>
     <div class="row gutter10">
 
-      {% for category in category_list_home %}
+      {% for category_list in category_list_home %}
 
-      <div class="col-md-6 col-sm-6">
+         <div class="col-md-6 col-sm-6">
         <a href="#" class="hover-overlay">
-          <img src="{{category.featured_img.url}}" alt="" class="img-responsive">
+          <img src="{{category_list.featured_img.url}}" alt="" class="img-responsive">
           <div class="text-overlay">
-            <h3>{{category}}</h3>
-            <p>430 Properties</p>
+            <h3>{{category_list.category.name}}</h3>
+            <p>{{category_list.property_count}} Properties</p>
           </div>
         </a>
       </div>
       {% endfor %}
+      
 
     </div>
   </div>
 </section>
 
-<section class="section bg" style="background-image: url(img/slider_2.jpg);">
-  <div class="container text-center animate" data-animate-effect="fadeIn">
-    <h2 class="heading">Best Home &amp; Properties</h2>
-    <p class="sub-heading">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-    <p><a href="#" class="btn btn-primary mb10">Find out more</a></p>
-  </div>
-</section>
-<!-- END: section -->
+<!-- listing -->
 
 <section class="section section-lighter">
   <div class="container">
@@ -128,14 +114,13 @@
     </div>
     <div class="row">
 
-      {% if property_list %}
-
+   
       {% for property in property_list_home %}
 
       <div class="col-md-4 col-sm-6">
         <div class="card listing">
           <div class="card-media">
-            <img src="{{property.featured_image.url}}" class="img-responsive" alt="">
+            <img class="card-img-top" src="{{property.featured_image.url}}" class="img-responsive" alt="">
            </div>
           <div class="card-text">
             <h2 class="card-heading"><a href="{% url 'app:property_detail' property.id %}">{{property}}</a></h2>
@@ -165,13 +150,7 @@
         <!-- END listing -->
       </div>
       {% endfor %} 
-      {% else %}
-
-    <div class="col-md-10 col-sm-10"> 
-      <h4>No Properties that match your search criteria</h4>
-    </div>
-
-    {% endif %}
+     
     </div>
   </div>
 </section>

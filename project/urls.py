@@ -24,3 +24,8 @@ urlpatterns = [
     path('contact/', include('contact.urls'), name='contact'),
     path('summernote/', include('django_summernote.urls')),
 ]
+
+
+admin.site.site_header = "Hausting Letting Agancy"
+admin.site.site_title =   "Hausting Letting Agancy"
+admin.site.site_index_title = "Welcome to Hausting Letting Agency Admin"

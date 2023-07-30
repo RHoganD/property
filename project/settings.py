@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'django_summernote',
+    'crispy_forms',
+    'bootstrap4',
     'cloudinary',
     'agents',
     'contact',
@@ -53,6 +55,8 @@ INSTALLED_APPS = [
 
 
 SITE_ID = 1
+
+# CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -146,7 +150,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # provisional to be replace with real information
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = 'test@gmail.com'
+DEFAULT_FROM_EMAIL = 'admin@gmail.com'
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSOWRD = ''
 EMAIL_USE_TLS = False

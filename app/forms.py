@@ -6,3 +6,5 @@ class ViewingForm(forms.ModelForm):
     class Meta :
         model = Viewing
         fields = '__all__'
+
+   

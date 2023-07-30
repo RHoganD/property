@@ -7,7 +7,7 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(Property)
 class PropertyAdmin(SummernoteModelAdmin):
     
-    list_display = ('name', 'price', 'property_type', 'category',)
+    list_display = ('name', 'price', 'property_type', 'category','bedrooms_num', 'bathroom_num','location',)
     search_fields = ['category', 'property_type']
     list_filter = ('category', 'price', 'property_type',)
     summernote_fields = ('description',)

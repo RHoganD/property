@@ -6,10 +6,10 @@ from django.db.models import Count
 # Create your views here.
 
 def home(request):
-    category_list = Category.objects.all()
+    category_list = Category.objects.annotate(property_count=Count('property')).values
+    ('category_name', 'property_count', 'featured_img')
     property_list = Property.objects.all()
     agent_list = Agent.objects.all()
-    
     template = 'home/index.html'
     context = {
          'category_list_home' : category_list,

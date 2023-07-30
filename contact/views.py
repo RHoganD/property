@@ -19,7 +19,7 @@ def send_email(request):
             message = contact_form.cleaned_data['message']
 
             try : 
-                sm(subject , message ,from_email , ['test@gmail.com'] )
+                sm(subject , message ,from_email , ['admin@gmail.com'] )
             
             except BadHeaderError : 
                 return HttpResponse('ivalid header')

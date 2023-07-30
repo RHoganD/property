@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load bootstrap4 %}
 
 {% block content %}
 
   <!-- END: header -->
-  <section class="slider flexslider2 page-inner">
+  <section>
     <div class="overlay"></div>
     <div class="wrap-banner">
       <div class="container">
@@ -77,10 +78,15 @@
           <form action="" method="POST">
             {% csrf_token %}
 
-            {{viewing_form}}
-            {{form.errors}}
+             {% bootstrap_form viewing_form %}
+
+            {% buttons %}
+
             <button type="submit" class="btn btn-primary">Arrange a Viewing</button>
-          </form>       
+            
+            {% endbuttons %}
+                 
+            </form>       
         </div>
        </div>
        </div>

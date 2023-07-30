@@ -76,6 +76,7 @@ class About(models.Model):
     vision = models.TextField(max_length=5000)
     mission = models.TextField(max_length=5000)
     image_feature = CloudinaryField('image', default='placeholder')
+    about = models.TextField(max_length=5000 , null=True)
 
     def __str__(self):
         return str(self.id)
