@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@300&display=swap");
+
 html {
   overflow-x: hidden;
   font-size: 1em;
@@ -6,7 +8,7 @@ html {
 body {
   background: #fff;
   font-size: 16px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'roboto', sans-serif;
   line-height: 1.5;
   color: #7e8890;
 }
@@ -61,12 +63,12 @@ p, ul, ol, figure {
   margin-bottom: 1.3em;
 }
 
-a {
+/* a {
   -webkit-transition: .3s all;
   transition: .3s all;
   color: #2866AB;
   text-decoration: none;
-}
+} */
 
 a:hover, a:focus, a:active {
   color: black;
@@ -102,7 +104,7 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
   display: block;
   /* text-transform: uppercase; */
   font-weight: 900;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'roboto', sans-serif;
 }
 
 .logo:hover, .logo:focus, .logo:active {
@@ -171,7 +173,7 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
 }
 
 .mobile-menu-active .nav .extra-text h5 {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: .1em;
   color: rgba(255, 255, 255, 0.5);
 }
@@ -208,13 +210,12 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
 }
 
 .main-nav li a {
-  font-weight: 400;
-  text-transform: uppercase;
+  font-weight: 300;
   padding: 10px 0;
   color: #000000;
   font-size: 14px;
   border-bottom: 2px solid transparent;
-}
+ }
 
 .main-nav li a:hover {
   color: #2866AB;
@@ -295,6 +296,11 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
 
 .header-social li a {
   color: #ffffff;
+}
+
+.black-button:hover {
+  background-color: #9c8300;
+  transition: 300ms;
 }
 
 .mobile-menu-overlay {
@@ -419,7 +425,7 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
   transition: .3s all ease-in;
 }
 
-.btn.btn-sm {
+.btn {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 20px;
@@ -492,7 +498,7 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
   color: #ffffff;
   border: 1px solid #000000;
 }
-
+footer
 .btn.btn-black:hover {
   background: #000000;
   color: #ffffff;
@@ -607,7 +613,7 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
   margin-top: 0;
   margin-bottom: 10px;
   color: #ffffff;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'roboto', sans-serif;
   font-size: 30px;
   line-height: 30px;
 }
@@ -672,14 +678,14 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
 .footer-widget {
   float: left;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .footer-widget .heading {
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: .2em;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .footer-widget.right {
@@ -706,7 +712,7 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  padding: 8em 0;
+  padding: 1em 0;
   position: relative;
   color: rgba(255, 255, 255, 0.9);
 }
@@ -846,7 +852,7 @@ a.hover-reverse:hover, a.hover-reverse:focus, a.hover-reverse:active {
   font-size: 2.074em;
   font-weight: 700;
   text-transform: uppercase;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'roboto', sans-serif;
 }
 
 .lead {
@@ -1832,7 +1838,7 @@ a, .breadcrumbs span {
   color: #ffffff;
   font-weight: 200;
   line-height: 60px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'roboto', sans-serif;
  
 }
 
@@ -2045,7 +2051,7 @@ a, .breadcrumbs span {
 }
 
 /* Owl carousel override style */
-.owl-carousel {
+/* .owl-carousel {
   margin-bottom: 100px;
 }
 
@@ -2110,10 +2116,10 @@ a, .breadcrumbs span {
 .owl-carousel-fullwidth.fh5co-light-arrow .owl-controls .owl-nav .owl-next:hover i,
 .owl-carousel-fullwidth.fh5co-light-arrow .owl-controls .owl-nav .owl-prev:hover i {
   color: #ffffff;
-}
+} */
 
 @media screen and (max-width: 768px) {
-  .owl-theme .owl-controls .owl-nav {
+  /* .owl-theme .owl-controls .owl-nav {
     display: none;
   }
 }
@@ -2201,10 +2207,10 @@ a, .breadcrumbs span {
 .image-link {
   cursor: -webkit-zoom-in;
   cursor: zoom-in;
-}
+} */
 
 /* This block of CSS adds opacity transition to background */
-.mfp-with-zoom .mfp-container,
+/* .mfp-with-zoom .mfp-container,
 .mfp-with-zoom.mfp-bg {
   opacity: 0;
   -webkit-backface-visibility: hidden;
@@ -2223,23 +2229,23 @@ a, .breadcrumbs span {
 .mfp-with-zoom.mfp-removing .mfp-container,
 .mfp-with-zoom.mfp-removing.mfp-bg {
   opacity: 0;
-}
+} */
 
 /* padding-bottom and top for image */
-.mfp-no-margins img.mfp-img {
+/* .mfp-no-margins img.mfp-img {
   padding: 0;
-}
+} */
 
 /* position of shadow behind the image */
-.mfp-no-margins .mfp-figure:after {
+/* .mfp-no-margins .mfp-figure:after {
   top: 0;
   bottom: 0;
-}
+} */
 
 /* padding for main container */
-.mfp-no-margins .mfp-container {
+/* .mfp-no-margins .mfp-container {
   padding: 0;
-}
+} */
 
 /* aligns caption to center */
 .mfp-title {
@@ -2426,7 +2432,7 @@ a, .breadcrumbs span {
   }
 }
 
-.loader {
+/* .loader {
   position: fixed;
   left: 0px;
   top: 0px;
@@ -2473,4 +2479,4 @@ a, .breadcrumbs span {
   text-decoration: none;
   outline: none;
   background: rgba(0, 0, 0, 0.9);
-}
+} */

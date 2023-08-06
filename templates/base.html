@@ -25,22 +25,22 @@
 
         <nav role="navigation" class="nav hidden-xs">
           <ul class="main-nav">
-            <i><a href="{% url 'home:home' %}"> Home</a></i>
-            <i><a href="{% url 'app:property_list' %}"> Properties</a></i>
-            <i><a href="{% url 'agents:agent' %}"> Agents</a></i>
-            <i><a href="{% url 'app:about' %}"> About us</a></i>
-            <i><a href="{% url 'contact:send_email'%}"> Contact</a></i>
+            <li><a href="{% url 'home:home' %}"> Home</a></li>
+            <li><a href="{% url 'app:property_list' %}"> Properties</a></li>
+            <li><a href="{% url 'agents:agent' %}"> Agents</a></li>
+            <li><a href="{% url 'app:about' %}"> About us</a></li>
+            <li><a href="{% url 'contact:send_email'%}"> Contact</a></li>
 
             {% if user.is_authenticated %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+            <li class="main-nav">
+                <a class="main-nav" href="{% url 'account_logout' %}">Logout</a>
             </li>
             {% else %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+            <li class="main-nav">
+                <a class="main-nav" href="{% url 'account_signup' %}">Sign up</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+            <li class="main-nav" >
+                <a class="main-nav" href="{% url 'account_login' %}">Login</a>
             </li>
             {% endif %}
 
@@ -70,7 +70,7 @@
 
 
 <!-- footer section  -->
-  <footer class="footer bg" style="background-image: url(img/slider_3.jpg)">
+  <footer class="footer bg">
     <div class="container">
       <div class="row mb60">
         <div class="col-md-3">
@@ -83,7 +83,7 @@
           <div class="footer-widget link-wrap">
             <h4 class="heading">Quick Links</h4>
             <ul class="stack-link">
-              <li><a href="#{% url 'app:property_list' %}">Property Listing</a></li>
+              <li><a href="{% url 'app:property_list' %}">Property Listing</a></li>
               <li><a href="{% url 'app:property_list' %}">Rent Properties</a></li>
               <li><a href="{% url 'app:property_list' %}">Sell Properties</a></li>
               <li><a href="{% url 'agents:agent' %}">Agents</a></li>
@@ -110,9 +110,9 @@
     </div>
   </footer>
 
-  <div class="gototop js-top">
+  <!-- <div class="gototop js-top">
     <a href="#" class="js-gotop"><i class="icon-chevron-thin-up"></i></a>
-  </div>
+  </div> -->
   </body>
  
 </html>

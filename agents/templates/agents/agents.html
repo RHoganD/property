@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col-md-8">
 
-            <div class="page-title animate">
+            <div class="page-title">
               <div class="breadcrumbs">
                 <a href="{% url 'home:home' %}">Home</a> <span><a href="#"></a>Agents</span>
               </div>
@@ -32,7 +32,7 @@
       </div>
       <div class="row">
 
-        {% for agent in agents_list %}
+        {% for agent in agents_list_agents %}
 
         <div class="col-md-3 col-sm-6">
           <div class="card person text-left">
